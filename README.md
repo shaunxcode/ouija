@@ -1,4 +1,4 @@
 ouija
 =====
 
-component for planchent indicated toggles ala ouija board
+component for planchette indicated toggles ala ouija board

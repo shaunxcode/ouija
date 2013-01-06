@@ -1,2 +1,2 @@
-coffee -c index.coffee
-lessc index.less > index.css
+coffee -o ./ -c src/index.coffee
+lessc src/index.less > index.css

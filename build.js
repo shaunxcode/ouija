@@ -9606,6 +9606,7 @@ require.register("ouija/index.js", function(module, exports, require){
       var $list, $planchette, $select, active, selected;
       $select = $(select);
       $select.after($list = $("<ul />").addClass("ouijaBoard"));
+      $list.addClass($select.prop("class"));
       selected = 0;
       active = false;
       $("option", $select).each(function(index) {
@@ -9616,7 +9617,7 @@ require.register("ouija/index.js", function(module, exports, require){
         }
         return $list.append($("<li />").addClass("ouija-" + ($option.prop("value"))).text($option.text()).on({
           click: function() {
-            var $li;
+            var $li, bw;
             $select.val($option.prop("value"));
             $select.trigger("change");
             $li = $(this);
@@ -9624,16 +9625,16 @@ require.register("ouija/index.js", function(module, exports, require){
               active.removeClass("on");
             }
             active = $li;
+            bw = (parseInt($planchette.css("border-width"))) * 2;
+            $planchette.prop("class", "planchette");
             return $planchette.animate({
               top: $li.position().top,
               left: $li.position().left,
-              width: $li.width() + 5,
-              height: $li.height() + 5
+              width: $li.outerWidth() - bw,
+              height: $li.outerHeight() - bw
             }, 150, function() {
-              $planchette.css({
-                "-webkit-transform": $li.css("-webkit-transform")
-              });
               $("li", $list).removeClass("on");
+              $planchette.addClass("ouija-on-" + ($option.prop("value")));
               return $li.addClass("on");
             });
           }

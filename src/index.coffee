@@ -1,5 +1,3 @@
-$ = require "jquery"
-
 $.fn.ouija = ->
     self = this
     @hide()
@@ -15,13 +13,18 @@ $.fn.ouija = ->
           if $option.is ":selected"
               selected = index
 
-          $list.append $("<li />")
-            .addClass("ouija-#{$option.prop "value"}")
+          $list.append $li = $("<li />")
+              .droppable(
+                hoverClass: "onHover"
+                drop: ->
+                  dragging = false
+                  $li.click()
+              )
+              .addClass("ouija-#{$option.prop "value"}")
               .text($option.text())
               .on click: -> 
                   $select.val $option.prop "value"
                   $select.trigger "change"
-                  $li = $ this
                   active.removeClass? "on"
                   active = $li
                   bw = (parseInt $planchette.css("border-width")) * 2
@@ -40,7 +43,9 @@ $.fn.ouija = ->
           .addClass("planchette")
           .css(height: $list.height())        
   
+      dragging = false
       $planchette.on click: ->
+          return if dragging
           next = active.nextAll("li").first()
           if next.length
             $(next).click()
@@ -48,7 +53,15 @@ $.fn.ouija = ->
             first = active.prevAll("li").last()
             if first.length
               $(first).click()
-              
+
+      $planchette.draggable
+        containment: "parent"
+        start: ->
+          active?.removeClass "on"
+          dragging = true
+        stop: ->
+          setTimeout (-> dragging = false), 100
+
       $("li", $list).eq(selected).click()
       
 

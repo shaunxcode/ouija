@@ -8,9 +8,6 @@
     "element",
     "form"
   ],
-  "dependencies": {
-    "component/jquery": "*"
-  },
   "scripts": [
     "index.js"
   ],

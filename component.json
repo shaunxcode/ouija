@@ -1,0 +1,20 @@
+{
+  "name": "ouija",
+  "repo": "shaunxcode/ouija",
+  "description": "ouija selector",
+  "version": "0.0.1",
+  "keywords": [
+    "utility",
+    "element",
+    "form"
+  ],
+  "dependencies": {
+    "component/jquery": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.css"
+  ]
+}

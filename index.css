@@ -1,0 +1,41 @@
+.ouijaBoard {
+  margin: 4px;
+  margin-left: 0;
+  position: relative;
+  background-color: #c0c0c0;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.5);
+  border: 2px solid #b7b7b7;
+}
+.ouijaBoard li {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 2em;
+  color: #777;
+}
+.ouijaBoard .on {
+  background-color: #4987d3;
+  color: white;
+  border-radius: 5px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.8);
+}
+.ouijaBoard .planchette {
+  position: absolute;
+  background-color: transparent;
+  border: 3px solid #eee;
+  border-radius: 4px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}

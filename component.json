@@ -9,7 +9,8 @@
     "form"
   ],
   "scripts": [
-    "index.js"
+    "index.js",
+    "vendor/jquery-ui-touch-punch.js"
   ],
   "styles": [
     "index.css"

@@ -1,3 +1,5 @@
+require "./vendor/jquery-ui-touch-punch.js"
+
 $.fn.ouija = ->
     self = this
     @hide()

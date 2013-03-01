@@ -36,7 +36,7 @@
               active.removeClass("on");
             }
             active = $li;
-            bw = (parseInt($planchette.css("border-width"))) * 2;
+            bw = (parseInt($planchette.css("border-left-width"))) + (parseInt($planchette.css("border-right-width")));
             $planchette.prop("class", "planchette");
             return $planchette.animate({
               top: $li.position().top,
